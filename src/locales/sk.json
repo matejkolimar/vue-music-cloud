@@ -1,0 +1,16 @@
+{
+  "home": {
+    "listen": "Počúvajte skvelú hudbu!",
+    "songs": "Pesníčky"
+  },
+  "manage": {
+    "my_songs": "Moje pesníčky"
+  },
+  "register": {
+    "TOS": "podmienky používania",
+    "accept": "Akceptujem {0}"
+  },
+  "song": {
+    "comment_count": "Žiadne komentáre | 1 Komentár | {count} Komentáre"
+  }
+}
