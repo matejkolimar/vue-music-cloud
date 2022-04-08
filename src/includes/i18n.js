@@ -28,4 +28,12 @@ export default createI18n({
   locale: process.env.VUE_APP_I18N_LOCALE || "sk",
   fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || "en",
   messages: loadLocaleMessages(),
+  numberFormats: {
+    en: {
+      currency: { style: "currency", currency: "GBP" },
+    },
+    sk: {
+      currency: { style: "currency", currency: "EUR" },
+    },
+  },
 });
