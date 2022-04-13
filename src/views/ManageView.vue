@@ -29,6 +29,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import UploadSong from "@/components/UploadSong.vue";
 import CompositionItem from "@/components/CompositionItem.vue";
 import { songsCollection, auth } from "@/includes/firebase";
@@ -73,7 +74,6 @@ export default {
     if (!this.unsavedFlag) {
       next();
     } else {
-      // eslint-disable-next-line no-restricted-globals
       const leave = confirm("You have unsaved changes. Are you sure you want to leave?");
       next(leave);
     }
