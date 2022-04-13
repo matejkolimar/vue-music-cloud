@@ -1,9 +1,13 @@
+/* eslint-disable implicit-arrow-linebreak */
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "@/views/HomeView.vue";
-import About from "@/views/AboutView.vue";
-import Manage from "@/views/ManageView.vue";
-import Song from "@/views/SongView.vue";
 import store from "@/store";
+// Dynamic route import
+const Home = () => import("@/views/HomeView.vue");
+const Manage = () =>
+  import(/* webpackChunkName: "groupedChunk" */ "@/views/ManageView.vue");
+const Song = () =>
+  import(/* webpackChunkName: "groupedChunk" */ "@/views/SongView.vue");
+const About = () => import("@/views/AboutView.vue");
 
 const routes = [
   {
