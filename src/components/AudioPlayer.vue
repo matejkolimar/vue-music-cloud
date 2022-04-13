@@ -1,5 +1,8 @@
 <template>
-  <div class="fixed bottom-0 left-0 bg-white p-5 pb-4 text-left align-top w-full h-16">
+  <div
+    v-if="userLoggedIn"
+    class="fixed bottom-0 left-0 bg-white p-5 pb-4 text-left align-top w-full h-16"
+  >
     <div class="relative">
       <!-- Play/Pause Button -->
       <div class="float-left w-7 h-7 leading-3">
@@ -59,6 +62,7 @@ export default {
   computed: {
     ...mapGetters(["playing"]),
     ...mapState({
+      userLoggedIn: (state) => state.auth.userLoggedIn,
       seek: (state) => state.player.seek,
       duration: (state) => state.player.duration,
       playerProgress: (state) => state.player.playerProgress,

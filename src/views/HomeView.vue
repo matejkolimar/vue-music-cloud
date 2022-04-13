@@ -38,7 +38,7 @@
           <!-- Icon -->
         </div>
         <!-- Playlist -->
-        <ol id="playlist">
+        <ol v-if="userLoggedIn" id="playlist">
           <song-item v-for="song in songs" :key="song.docID" :song="song" />
         </ol>
         <!-- .. end Playlist -->
@@ -51,6 +51,7 @@
 import { songsCollection } from "@/includes/firebase";
 import SongItem from "@/components/SongItem.vue";
 import IconSecondary from "@/directives/icon-secondary";
+import { mapState } from "vuex";
 
 export default {
   name: "HomeView",
@@ -73,6 +74,11 @@ export default {
   },
   beforeUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
+  },
+  computed: {
+    ...mapState({
+      userLoggedIn: (state) => state.auth.userLoggedIn,
+    }),
   },
   methods: {
     handleScroll() {

@@ -40,6 +40,9 @@ const routes = [
   {
     name: "song",
     path: "/song/:id",
+    meta: {
+      requiresAuth: true,
+    },
     component: Song,
   },
   {

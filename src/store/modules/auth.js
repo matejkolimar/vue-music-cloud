@@ -1,4 +1,5 @@
 import { auth, usersCollection } from "@/includes/firebase";
+import player from "./player";
 
 export default {
   // namespaced: true,
@@ -49,6 +50,7 @@ export default {
       await auth.signOut();
 
       commit("toggleAuth");
+      player.state.sound.pause();
     },
   },
 };
