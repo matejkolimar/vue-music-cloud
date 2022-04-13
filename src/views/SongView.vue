@@ -12,7 +12,7 @@
         <button
           type="button"
           class="z-50 h-24 w-24 text-3xl bg-white text-black rounded-full focus:outline-none"
-          @click.prevent="newSong(song)"
+          @click.prevent="play(song, playing)"
         >
           <i class="fas" :class="{ 'fa-play': !playing, 'fa-pause': playing }"></i>
         </button>
@@ -148,7 +148,14 @@ export default {
     });
   },
   methods: {
-    ...mapActions(["newSong"]),
+    ...mapActions(["newSong", "toggleAudio"]),
+    play(song, state) {
+      if (!state) {
+        this.newSong(song);
+      } else {
+        this.toggleAudio();
+      }
+    },
     async addComment(values, { resetForm }) {
       this.comment_in_submission = true;
       this.comment_show_alert = true;
