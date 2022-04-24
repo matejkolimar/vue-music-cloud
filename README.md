@@ -1,4 +1,5 @@
 # music
+I build Music Player application similar to Spotify using Vue, Vuex, Vue Router, Composition API, Firebase, Howl and Tailwind.
 
 ## Project setup
 ```
